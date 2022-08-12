@@ -1,2 +1,4 @@
-document.write('some thing');
-document.body.style.backgroundColor = "tan";
+alert('Hello World');
+
+let favoriteFood = "Snow Crab";
+document.write(favoriteFood);
