@@ -27,6 +27,6 @@ let pokemonList = [
   }
 ];
 
-poke0 = pokemonList[0];
+let poke0 = pokemonList[0];
 
 document.write(`${poke0.name} is ${poke0.height} feet tall and is a ${poke0.types[0]} type.`);
