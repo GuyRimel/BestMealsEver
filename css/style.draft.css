@@ -2,4 +2,50 @@
     box-sizing: border-box;
     margin: 0;
     font-family: Roboto, Arial, Courier;
+
+    /* Colors */
+    --color-turkey: #a93800;
+    --color-turkey-lighter: #edd878;
+}
+
+body {
+    background-color: beige;
+}
+
+header {
+    background-color: var(--color-turkey);
+    color: #fff;
+    font-family: Courier, monospace;
+}
+
+.subheader {
+    background-color: var(--color-turkey-lighter);
+}
+
+.flex-column {
+    display: flex;
+    flex-flow: column;
+}
+
+.flex-row {
+    display: flex;
+    flex-flow: row;
+}
+
+.center {
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.marg0 {
+    margin: 0;
+}
+
+.pad5 {
+    padding: 5px;
+}
+
+.pad10 {
+    padding: 10px;
 }
