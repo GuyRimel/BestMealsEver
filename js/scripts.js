@@ -118,12 +118,26 @@ let pet1 = {
 }
 
 pets.push(pet1.name);
-pets.push('Miles');
-pets.unshift('Sandy');
-pets.push('Ash');
-let pets2 = pets.slice();
-pets.sort();
+pets.push('Miles', 'Miles', 'Milesh');
+pets.push('Sandy');
+pets.push('Ash', 'Dumpy', 'Stumpy', 'Dumpty');
 
 console.log(pets);
-console.log(pets.indexOf('Miles'));
-console.log(pets2.indexOf('Miles'));
+console.log(pets.indexOf('Milesh'));
+
+pets.forEach(
+  function(name) {
+    console.log(name)
+  }
+);
+
+
+(function() {
+  
+  myArray = [1,2,3,4,5,6,7,8,9,10,11,12];
+  let str ='';
+
+  myArray.forEach( item => str += `<div>I am div ${item}</div>` );
+
+  document.getElementById('container').innerHTML = str;
+})()
