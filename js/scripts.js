@@ -53,14 +53,15 @@ let pokemonRepository = (
       return pokemonList;
     }
 
-    function appendPokemon(pokemon) {
-      let parentElement = document.querySelector('.container');
-      let element = document.createElement('div');
-      let elementString = `${pokemon.name}\nTypes: ${pokemon.types}\nHeight: ${pokemon.height} ${phraseHeight(pokemon.height)}\n`;
+    function addListItem(pokemon) {
+      let listItem = document.createElement('li');
+      let button = document.createElement('button');
 
-      element.innerText = elementString;
-      element.classList.add('pokemonTile');
-      parentElement.appendChild(element);
+      button.innerText = `${pokemon.name}`;
+      button.classList.add('pokemonTile');
+      button.classList.add(pokemon.types[0]);
+      listItem.appendChild(button);
+      document.querySelector('.pokemon-list').appendChild(listItem);
     }
     
     function phraseHeight(height) {
@@ -91,7 +92,7 @@ let pokemonRepository = (
       add: add,
       addv: addv,
       getAll: getAll,
-      appendPokemon: appendPokemon,
+      addListItem: addListItem,
       phraseHeight: phraseHeight,
       filterByName: filterByName
     }
@@ -114,7 +115,7 @@ pokemonRepository.addv(
 
 pokemonRepository.getAll().forEach(
   function(pokemon) {
-    pokemonRepository.appendPokemon(pokemon);
+    pokemonRepository.addListItem(pokemon);
     }
 );
 
