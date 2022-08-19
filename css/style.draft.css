@@ -4,22 +4,31 @@
     font-family: Roboto, Arial, Courier;
 
     /* Colors */
-    --color-turkey: #a93800;
-    --color-turkey-lighter: #edd878;
+    --color-header: #a93800;
+    --color-subheader: #edd878;
 }
 
 body {
-    background-color: beige;
+    background-color: #eed;
 }
 
 header {
-    background-color: var(--color-turkey);
+    background-color: var(--color-header);
     color: #fff;
     font-family: Courier, monospace;
 }
 
+.recipeTile {
+    background-color: palegoldenrod;
+    border: 1px solid #222;
+    border-radius: 3px;
+    margin: 5px 20px 25px 20px;
+    padding: 12px;
+    box-shadow: 2px 2px #999;
+}
+
 .subheader {
-    background-color: var(--color-turkey-lighter);
+    background-color: var(--color-subheader);
 }
 
 .flex-column {
