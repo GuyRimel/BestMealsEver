@@ -1,37 +1,44 @@
-// recipeRepository function (IIFE)
-let recipeRepository = (
+// pokemonRepository function (IIFE)
+let pokemonRepository = (
   function() {
-    // the first object ( recipeList[0] ) is used as validation for the 'addv()' method
-    let recipeList = [
+    // the first object ( pokemonList[0] ) is used as validation for the 'addv()' method
+    let pokemonList = [
       {
-        name: 'Snowcrab Legs',
-        description: "Snowcrab legs are the most delicious thing ever. They are super easy to steam or bake!",
-        categories: ['seafood', 'healthy', 'meat'],
-        ingredients: ['crab', 'butter', 'garlic powder'],
-        price: '$$$', // could be calculated on the fly with ingredient prices and a formula...
-        recipe: [],
-        rating: 10,
-        reviews: [{},{}]
+        name: 'Bulbasaur',
+        types: ['grass','poison'],
+        height: 1.9,
+      },
+      {
+        name: 'Charizard',
+        types: ['fire','flying'],
+        height: 9,
+      },
+      {
+        name: 'Squirtle',
+        types: ['water'],
+        height: 4,
       }
     ];
 
-    // 'add' pushes one argument to the recipeList array WITHOUT validation
-    function add(recipe) {
-      recipeList.push(recipe);
-      console.log(`${recipe.name} recipe added!`);
+    let searchResults;
+
+    // 'add' pushes one argument to the pokemonList array WITHOUT validation
+    function add(pokemon) {
+      pokemonList.push(pokemon);
+      console.log(`${pokemon.name} pokemon added!`);
     }
 
-    // 'addv' pushes input to the recipeList array WITH validation
-    // the first object in recipeList is considered 'valid'
+    // 'addv' pushes input to the pokemonList array WITH validation
+    // the first object in pokemonList is considered 'valid'
     // the 'every' method is used to compare the sorted 'input' argument with sorted 'validInput' (comparing sorted 'Object.keys()' arrays) and returns a boolean
     function addv(input) {
-      let validInput = Object.keys(recipeList[0]).sort();
+      let validInput = Object.keys(pokemonList[0]).sort();
 
       if(typeof(input) == 'object') {
         let inputArray = Object.keys(input).sort();
 
         if(inputArray.every((value, index) => value === validInput[index])) {
-          recipeRepository.add(input);
+          pokemonRepository.add(input);
         } else {
           console.log(`input=${input.name} is an object with incorrect keys...`)
         }
@@ -41,41 +48,41 @@ let recipeRepository = (
       }
     }
 
-    // returns the recipeList array
+    // returns the pokemonList array
     function getAll() {
-      return recipeList;
+      return pokemonList;
     }
 
-    function appendrecipe(recipe) {
+    function appendPokemon(pokemon) {
       let parentElement = document.querySelector('.container');
       let element = document.createElement('div');
-      let elementString = `${recipe.name}\nCategories: ${recipe.categories}\nPrice: ${recipe.price}\nRating: ${recipe.rating} ${phraseRating(recipe.rating)}\n`;
+      let elementString = `${pokemon.name}\nTypes: ${pokemon.types}\nHeight: ${pokemon.height} ${phraseHeight(pokemon.height)}\n`;
 
       element.innerText = elementString;
-      element.classList.add('recipeTile');
+      element.classList.add('pokemonTile');
       parentElement.appendChild(element);
     }
-
-    function phraseRating(rating) {
+    
+    function phraseHeight(height) {
       let phrase;
       
-      if (rating >= 8) {
-        phrase = `This is awesome!`;
-      } else if (rating < 8 && rating >= 5) {
-        phrase = `This is pretty good!`;
-      } else if (rating < 5 && rating >= 3){
-        phrase = `This is not very good...`;
+      if (height >= 6) {
+        phrase = `This thing's HUGE! O_O`;
+      } else if (height < 6 && height >= 4) {
+        phrase = `That's about average o_o`;
+      } else if (height < 4 && height >= 2){
+        phrase = `Kind of a shorty -_-`;
       } else {
-        phrase = `GROSS!`;
+        phrase = `What a tiny little Pokemon! ^o^`;
       }
-
+      
       return phrase;
     }
 
-    // this function takes a query string and returns a filtered array from recipeList names
+    // this function takes a query string and returns a filtered array from pokemonList names
     function filterByName(query){
       let nameArray = [];
-      recipeList.forEach(el => nameArray.push(el.name));
+      pokemonList.forEach(el => nameArray.push(el.name));
       return nameArray.filter((el) => el.toLowerCase().includes(query.toLowerCase()));
     }
 
@@ -84,8 +91,8 @@ let recipeRepository = (
       add: add,
       addv: addv,
       getAll: getAll,
-      appendrecipe: appendrecipe,
-      phraseRating: phraseRating,
+      appendPokemon: appendPokemon,
+      phraseHeight: phraseHeight,
       filterByName: filterByName
     }
   }
@@ -95,67 +102,20 @@ let recipeRepository = (
 // the 'poke' value is set to pokemon object at the current index
 // the 'phrase' value is determined by the pokemon's height
 
-recipeRepository.addv('rat-stew');
+pokemonRepository.addv('some random Pokemon');
 
-recipeRepository.addv(
+pokemonRepository.addv(
   {
-    name: 'mouse-stew',
-    categories: ['gross', 'made with dead mice'],
-    price: '$',
-    rating: 2,
-    reviews: [],
-    description: '',
-    ingredients: [],
-    recipe: []
+    name: 'Pidgey',
+    types: ['flying', 'normal'],
+    height: 3.5
   }
 );
 
-recipeRepository.addv(
-  {
-    name: 'apple-pie',
-    categories: ['gross', 'made with dead mice'],
-    price: '$',
-    rating: 2,
-    reviews: [],
-    description: '',
-    ingredients: [],
-    recipe: []
-  }
-);
-
-recipeRepository.addv({name: "cereal", rating: 7.9, price: '$', categories:['cheap']});
-
-recipeRepository.addv(
-  {
-    name: 'dog-stew',
-    categories: [],
-    price: '$',
-    rating: 3
-  }
-);
-
-recipeRepository.addv(
-  {
-    name: 'poisonous mushrooms flambee',
-    categories: [],
-    price: 'free in the woods',
-    rating: 1
-  }
-);
-
-recipeRepository.addv(
-  {
-    name: 'blue mushrooms',
-    categories: ['blue'],
-    price: 'free in the woods',
-    rating: 1
-  }
-);
-
-recipeRepository.getAll().forEach(
-  function(recipe) {
-    recipeRepository.appendrecipe(recipe);
+pokemonRepository.getAll().forEach(
+  function(pokemon) {
+    pokemonRepository.appendPokemon(pokemon);
     }
 );
 
-document.write(`<br>Search Results: ${recipeRepository.filterByName('e')}`);
+document.querySelector('#searchResults').innerText = pokemonRepository.filterByName('e');
