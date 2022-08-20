@@ -60,8 +60,14 @@ let pokemonRepository = (
       button.innerText = `${pokemon.name}`;
       button.classList.add('pokemonTile');
       button.classList.add(pokemon.types[0]);
+      button.addEventListener('click', showDetails(pokemon));
+      
       listItem.appendChild(button);
       document.querySelector('.pokemon-list').appendChild(listItem);
+    }
+
+    function showDetails(pokemon) {
+      console.log(pokemon);
     }
     
     function phraseHeight(height) {
@@ -94,7 +100,8 @@ let pokemonRepository = (
       getAll: getAll,
       addListItem: addListItem,
       phraseHeight: phraseHeight,
-      filterByName: filterByName
+      filterByName: filterByName,
+      showDetails: showDetails
     }
   }
 )();
