@@ -4,7 +4,7 @@
     font-family: Roboto, Arial, Courier;
 
     /* Colors */
-    --color-header: #222;
+    --color-header: #092672;
     --color-header-text: silver;
     --color-subheader: #3c59a5;
     --color-subheader-text: #ffcc03;
@@ -17,7 +17,7 @@
 }
 
 body {
-    background-color: #eee;
+    background-color: #ddd;
 }
 
 header {
@@ -31,37 +31,40 @@ header {
     color: var(--color-subheader-text);
 }
 
-.pokemon-list {
+ul.pokemon-list {
+    padding: 0;
     list-style: none;
 }
 
 .pokemonTile {
-    width: 75%;
-    border: 1px solid #222;
-    border-radius: 3px;
-    margin: 0 20px 25px;
+    background-color: #efefef;
+    width: 100%;
+    margin: 0 0 10px;
     padding: 12px;
-    box-shadow: 2px 2px #999;
+}
+
+.pokemonTile:active{
+    color: cyan;
 }
 
 .normal {
-    background-color: var(--color-normal-type);
+    border: 1px solid var(--color-normal-type);
 }
 
 .fire {
-    background-color: var(--color-fire-type);
+    border: 1px solid var(--color-fire-type);
 }
 
 .water {
-    background-color: var(--color-water-type);
+    border: 1px solid var(--color-water-type);
 }
 
 .grass {
-    background-color: var(--color-grass-type);
+    border: 1px solid var(--color-grass-type);
 }
 
 .flying {
-    background-color: var(--color-flying-type);
+    border: 1px solid var(--color-flying-type);
 }
 
 .flex-column {

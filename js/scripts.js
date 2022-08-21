@@ -60,8 +60,10 @@ let pokemonRepository = (
       button.innerText = `${pokemon.name}`;
       button.classList.add('pokemonTile');
       button.classList.add(pokemon.types[0]);
-      button.addEventListener('click', showDetails(pokemon));
-      
+      button.addEventListener('click', function(event) {
+        showDetails(pokemon);
+        });
+
       listItem.appendChild(button);
       document.querySelector('.pokemon-list').appendChild(listItem);
     }
@@ -86,21 +88,13 @@ let pokemonRepository = (
       return phrase;
     }
 
-    // this function takes a query string and returns a filtered array from pokemonList names
-    function filterByName(query){
-      let nameArray = [];
-      pokemonList.forEach(el => nameArray.push(el.name));
-      return nameArray.filter((el) => el.toLowerCase().includes(query.toLowerCase()));
-    }
-
-    // only the things in this returned object are accessible outside the scope of this function
+    // ! -- only the things in this returned object are accessible outside the scope of this function
     return {
       add: add,
       addv: addv,
       getAll: getAll,
       addListItem: addListItem,
       phraseHeight: phraseHeight,
-      filterByName: filterByName,
       showDetails: showDetails
     }
   }
@@ -125,5 +119,3 @@ pokemonRepository.getAll().forEach(
     pokemonRepository.addListItem(pokemon);
     }
 );
-
-document.querySelector('#searchResults').innerText = pokemonRepository.filterByName('e');
