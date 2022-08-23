@@ -44,7 +44,8 @@ ul.pokemon-list {
 }
 
 .pokemonTile:active{
-    color: cyan;
+    background-color: cyan;
+    transform: translateY(4px);
 }
 
 .normal {
