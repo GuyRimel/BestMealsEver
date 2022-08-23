@@ -38,7 +38,7 @@ ul.pokemon-list {
 
 .pokemonTile {
     background-color: #efefef;
-    width: 100%;
+    width: 300px;
     margin: 0 0 10px;
     padding: 12px;
 }
