@@ -14,7 +14,7 @@ let pokemonRepository = (function () {
     }).then(function (json) {
       json.results.forEach(function (item) {
         let pokemon = {
-          name: item.name,
+          name: capitalizeFirstLetter(item.name),
           detailsUrl: item.url
         };
         add(pokemon);
@@ -52,10 +52,74 @@ let pokemonRepository = (function () {
   
   function showDetails(pokemon) {
     loadDetails(pokemon).then(function () {
-      console.log(pokemon)}).catch(function () {
+      showModal(pokemon)}).catch(function () {
         console.log(`failed to show ${pokemon}`);
       });
-    }
+  }
+
+  function showModal(pokemon) {
+    let modalContainer = document.querySelector('#modal-container');
+    modalContainer.classList.add('is-visible');
+    modalContainer.innerHTML = '';
+
+    let modal = document.createElement('div');
+    modal.classList.add('modal');
+    
+    // add modal content
+    let closeButtonElement = document.createElement('button');
+    closeButtonElement.classList.add('modal-close');
+    closeButtonElement.innerText = 'Close';
+    closeButtonElement.addEventListener('click', hideModal);
+    
+    let titleElement = document.createElement('h1');
+    let capitalizedName = capitalizeFirstLetter(pokemon.name);
+    titleElement.innerText = capitalizedName;
+
+    let imgElement = document.createElement('img');
+    imgElement.classList.add('modalPic');
+    imgElement.src = pokemon.imageUrl;
+    
+    let contentElement = document.createElement('p');
+    let phraseHeightString = phraseHeight(pokemon.height);
+    let firstType = pokemon.types[0].type.name;
+    contentElement.innerHTML = `
+      <b>Height: </b>${pokemon.height}
+      <p><em>${phraseHeightString}</em></p>
+      <b>Type: </b> ${capitalizeFirstLetter(firstType)}`;
+    
+    modal.appendChild(closeButtonElement);
+    modal.appendChild(imgElement);
+    modal.appendChild(titleElement);
+    modal.appendChild(contentElement);
+
+    modalContainer.appendChild(modal);
+    
+    modal.classList.add(firstType);
+    modalContainer.classList.add('is-visible');
+
+    window.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape' && modalContainer.classList.contains('is-visible')) {
+        hideModal();  
+      }
+    });
+    
+    modalContainer.addEventListener('click', (e) => {
+      let target = e.target;
+      if (target === modalContainer) {
+        hideModal();
+      }
+    });
+
+  }
+
+  function hideModal() {
+    let modalContainer = document.querySelector('#modal-container');
+    modalContainer.classList.remove('is-visible');
+  }
+
+  function capitalizeFirstLetter(string) {
+    return string.charAt(0).toUpperCase() + string.slice(1);
+  }
     
   function addListItem(pokemon) {
     let listItem = document.createElement('li');
@@ -106,11 +170,11 @@ let pokemonRepository = (function () {
   function phraseHeight(height) {
     let phrase;
     
-    if (height >= 6) {
+    if (height >= 12) {
       phrase = `This thing's HUGE! O_O`;
-    } else if (height < 6 && height >= 4) {
-      phrase = `That's about average o_o`;
-    } else if (height < 4 && height >= 2){
+    } else if (height < 12 && height >= 8) {
+      phrase = `That ain't small o_o`;
+    } else if (height < 8 && height >= 4){
       phrase = `Kind of a shorty -_-`;
     } else {
       phrase = `What a tiny little Pokemon! ^o^`;
