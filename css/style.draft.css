@@ -20,13 +20,13 @@
     --color-ground-type: #dec06a;
     --color-flying-type: #a890f0;
     --color-psychic-type: #f75985;
+    --color-bug-type: #a8b822;
     --color-rock-type: #b7a038;
     --color-ghost-type: #6f5898;
     --color-dragon-type: #6f38fd;
     --color-dark-type: #6f5848;
     --color-steel-type: #b9b8d0;
     --color-fairy-type: #ff9be1;
-
 }
 
 body {
