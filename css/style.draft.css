@@ -13,7 +13,20 @@
     --color-fire-type: #f08030;
     --color-water-type: #6890f0;
     --color-grass-type: #78c850;
+    --color-electric-type: #fbcf30;
+    --color-ice-type: #98d8d8;
+    --color-fighting-type: #b82d22;
+    --color-poison-type: #a1409e;
+    --color-ground-type: #dec06a;
     --color-flying-type: #a890f0;
+    --color-psychic-type: #f75985;
+    --color-rock-type: #b7a038;
+    --color-ghost-type: #6f5898;
+    --color-dragon-type: #6f38fd;
+    --color-dark-type: #6f5848;
+    --color-steel-type: #b9b8d0;
+    --color-fairy-type: #ff9be1;
+
 }
 
 body {
@@ -46,26 +59,6 @@ ul.pokemon-list {
 .pokemonTile:active {
     background-color: cyan;
     transform: translateY(4px);
-}
-
-.normal {
-    border: 5px solid var(--color-normal-type);
-}
-
-.fire {
-    border: 5px solid var(--color-fire-type);
-}
-
-.water {
-    border: 5px solid var(--color-water-type);
-}
-
-.grass {
-    border: 5px solid var(--color-grass-type);
-}
-
-.flying {
-    border: 5px solid var(--color-flying-type);
 }
 
 .flex-column {
@@ -125,8 +118,8 @@ ul.pokemon-list {
     flex-direction: column;
     margin: auto;
     padding: 15px;
-    width: 50%;
-    max-width: 700px;
+    width: 60%;
+    max-width: 500px;
     text-align: left;
   }
 
@@ -139,3 +132,23 @@ ul.pokemon-list {
     text-decoration: underline;
     cursor: pointer;
   }
+
+/* Pokemon TYPE Classes! (applied to modal)   */
+.normal { border: 5px solid var(--color-normal-type); }
+.fire { border: 5px solid var(--color-fire-type); }
+.water { border: 5px solid var(--color-water-type); }
+.grass { border: 5px solid var(--color-grass-type); }
+.electric { border: 5px solid var(--color-electric-type); }
+.ice { border: 5px solid var(--color-ice-type); }
+.fighting { border: 5px solid var(--color-fighting-type); }
+.poison { border: 5px solid var(--color-poison-type); }
+.ground { border: 5px solid var(--color-ground-type); }
+.flying { border: 5px solid var(--color-flying-type); }
+.psychic { border: 5px solid var(--color-psychic-type); }
+.bug { border: 5px solid var(--color-bug-type); }
+.rock { border: 5px solid var(--color-rock-type); }
+.ghost { border: 5px solid var(--color-ghost-type); }
+.dragon { border: 5px solid var(--color-dragon-type); }
+.dark { border: 5px solid var(--color-dark-type); }
+.steel { border: 5px solid var(--color-steel-type); }
+.fairy { border: 5px solid var(--color-fairy-type); }
