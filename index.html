@@ -23,11 +23,25 @@
   </header>
 
   <main class="container-fluid">
-    <div id="modal-container" class="is-hidden row"></div>
+    <!-- Modal -->
+    <div class="row modal" tabindex="-1" role="dialog" aria-labelledby="modal" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title">Modal title</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <img class="modalImg img-fluid"></img>
+          <div class="modal-body"></div>
+        </div>
+      </div>
+    </div>
 
-      <ul class="pokemon-list container-fluid">
-        <!-- list items go here -->
-      </ul>
+    <ul class="pokemon-list list-group container">
+      <!-- list items go here -->
+    </ul>
   </main>
   
   <!-- bottom scripts -->

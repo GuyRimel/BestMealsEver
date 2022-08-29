@@ -50,62 +50,51 @@ let pokemonRepository = (function () {
     });
   }
   
-  function showDetails(pokemon) {
+  function showDetails(pokemon, e) {
     loadDetails(pokemon).then(function () {
-      showModal(pokemon)}).catch(function () {
+      showModal(pokemon, e)}).catch(function () {
         console.log(`failed to show ${pokemon}`);
       });
   }
 
-  function showModal(pokemon) {
-    let modalContainer = document.querySelector('#modal-container');
-    modalContainer.classList.add('is-visible');
-    modalContainer.innerHTML = '';
-
-    let modal = document.createElement('div');
-    modal.classList.add('modal');
+  function showModal(pokemon, e) {
+    let modal = document.querySelector('.modal');
+    let clickedButton = e.target;
+    modal.classList.add('show');
+    modal.classList.remove('hide');
     
     // add modal content
-    let closeButtonElement = document.createElement('button');
-    closeButtonElement.classList.add('modal-close');
-    closeButtonElement.innerText = 'Close';
+    let closeButtonElement = document.querySelector('button.close');
     closeButtonElement.addEventListener('click', hideModal);
     
-    let titleElement = document.createElement('h1');
+    let titleElement = document.querySelector('.modal-title');
     let capitalizedName = capitalizeFirstLetter(pokemon.name);
     titleElement.innerText = capitalizedName;
-
-    let imgElement = document.createElement('img');
-    imgElement.classList.add('img-fluid');
+    
+    let imgElement = document.querySelector('.modalImg');
     imgElement.src = pokemon.imageUrl;
     
-    let contentElement = document.createElement('p');
+    let modalBody = document.querySelector('.modal-body');
     let phraseHeightString = phraseHeight(pokemon.height);
     let firstType = pokemon.types[0].type.name;
-    contentElement.innerHTML = `
+    modalBody.innerHTML = `
       <b>Height: </b>${pokemon.height}
       <p><em>${phraseHeightString}</em></p>
       <b>Type: </b> ${capitalizeFirstLetter(firstType)}`;
     
-    modal.appendChild(closeButtonElement);
-    modal.appendChild(imgElement);
-    modal.appendChild(titleElement);
-    modal.appendChild(contentElement);
-
-    modalContainer.appendChild(modal);
-    
-    modal.classList.add(firstType);
-    modalContainer.classList.add('is-visible');
+    let modalContent = document.querySelector('.modal-content');
+    modalContent.classList.add(firstType);
+    clickedButton.classList.add(firstType, 'borderW-3px');
 
     window.addEventListener('keydown', (e) => {
-      if (e.key === 'Escape' && modalContainer.classList.contains('is-visible')) {
+      if (e.key === 'Escape' && modal.classList.contains('show')) {
         hideModal();  
       }
     });
     
-    modalContainer.addEventListener('click', (e) => {
+    modal.addEventListener('click', (e) => {
       let target = e.target;
-      if (target === modalContainer) {
+      if (target === modal) {
         hideModal();
       }
     });
@@ -113,8 +102,14 @@ let pokemonRepository = (function () {
   }
 
   function hideModal() {
-    let modalContainer = document.querySelector('#modal-container');
-    modalContainer.classList.remove('is-visible');
+    let modalContainer = document.querySelector('.modal');
+    modalContainer.classList.remove('show');
+    modalContainer.classList.add('hide');
+
+    let modalContent = document.querySelector('.modal-content');
+
+    // this takes off the pokemon type class
+    modalContent.setAttribute('class', 'modal-content')
   }
 
   function capitalizeFirstLetter(string) {
@@ -125,21 +120,16 @@ let pokemonRepository = (function () {
     let listItem = document.createElement('li');
     let button = document.createElement('button');
 
-    listItem.classList.add('row');
-    listItem.classList.add('justify-content-center');
+    listItem.classList.add('group-list-item', 'row', 'justify-content-center', 'mb-2');
     button.innerText = `${pokemon.name}`;
-    button.classList.add('pokemonTile');
-    button.classList.add('col-12');
-    button.classList.add('col-md-8');
-    button.classList.add('col-lg-6');
-    button.classList.add('mb-1');
-    button.classList.add('p-2');
-    button.classList.add('text-center');
-    button.addEventListener('click', function (event) {
-      showDetails(pokemon);
+    button.classList.add('btn', 'btn-light', 'col-12', 'col-lg-6');
+    button.addEventListener('click', function (e) {
+      showDetails(pokemon, e);
       });
 
     listItem.appendChild(button);
+    button.setAttribute('data-target', '.modal');
+    button.setAttribute('data-toggle', 'modal');
     document.querySelector('.pokemon-list').appendChild(listItem);
   }
     

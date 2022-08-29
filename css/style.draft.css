@@ -45,80 +45,26 @@ h3 {
     margin-bottom: 0;
 }
 
-ul.pokemon-list {
-    list-style: none;
-}
-
-.pokemonTile {
-    background-color: #efefef;
-}
-
-.pokemonTile:active {
-    background-color: cyan;
-    transform: translateY(4px);
-}
-
-#modal-container {
-    display: none;
-}
-
-#modal-container.is-visible {
-    background: rgba(0, 0, 0, 0.5);
-    display: grid;
-    text-align: center;
-    position: fixed;
-    top: 0;
-    left: 0;
-
-    width: 100%;
-    height: 100%;
-    padding: 20px;
-
-    z-index: 999;
-    overflow: auto;
-}
-
-.modal h1 {
-    text-align: center;
-}
-
-.modal {
-    background: #fff;
-    display: flex;
-    flex-direction: column;
-    margin: auto;
-    padding: 15px;
-    width: 60%;
-    max-width: 500px;
-    text-align: left;
-  }
-
-  .modal-close {
-    text-align: right;
-    -webkit-appearance: none;
-    border: 0;
-    background: none;
-    color: #777;
-    text-decoration: underline;
-    cursor: pointer;
-  }
-
 /* Pokemon TYPE Classes! (applied to modal)   */
-.normal { border: 5px solid var(--color-normal-type); }
-.fire { border: 5px solid var(--color-fire-type); }
-.water { border: 5px solid var(--color-water-type); }
-.grass { border: 5px solid var(--color-grass-type); }
-.electric { border: 5px solid var(--color-electric-type); }
-.ice { border: 5px solid var(--color-ice-type); }
-.fighting { border: 5px solid var(--color-fighting-type); }
-.poison { border: 5px solid var(--color-poison-type); }
-.ground { border: 5px solid var(--color-ground-type); }
-.flying { border: 5px solid var(--color-flying-type); }
-.psychic { border: 5px solid var(--color-psychic-type); }
-.bug { border: 5px solid var(--color-bug-type); }
-.rock { border: 5px solid var(--color-rock-type); }
-.ghost { border: 5px solid var(--color-ghost-type); }
-.dragon { border: 5px solid var(--color-dragon-type); }
-.dark { border: 5px solid var(--color-dark-type); }
-.steel { border: 5px solid var(--color-steel-type); }
-.fairy { border: 5px solid var(--color-fairy-type); }
+.normal { border: 10px solid var(--color-normal-type); }
+.fire { border: 10px solid var(--color-fire-type); }
+.water { border: 10px solid var(--color-water-type); }
+.grass { border: 10px solid var(--color-grass-type); }
+.electric { border: 10px solid var(--color-electric-type); }
+.ice { border: 10px solid var(--color-ice-type); }
+.fighting { border: 10px solid var(--color-fighting-type); }
+.poison { border: 10px solid var(--color-poison-type); }
+.ground { border: 10px solid var(--color-ground-type); }
+.flying { border: 10px solid var(--color-flying-type); }
+.psychic { border: 10px solid var(--color-psychic-type); }
+.bug { border: 10px solid var(--color-bug-type); }
+.rock { border: 10px solid var(--color-rock-type); }
+.ghost { border: 10px solid var(--color-ghost-type); }
+.dragon { border: 10px solid var(--color-dragon-type); }
+.dark { border: 10px solid var(--color-dark-type); }
+.steel { border: 10px solid var(--color-steel-type); }
+.fairy { border: 10px solid var(--color-fairy-type); }
+
+.borderW-3px {
+    border-width: 3px;
+}
