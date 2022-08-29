@@ -76,7 +76,7 @@ let pokemonRepository = (function () {
     titleElement.innerText = capitalizedName;
 
     let imgElement = document.createElement('img');
-    imgElement.classList.add('modalPic');
+    imgElement.classList.add('img-fluid');
     imgElement.src = pokemon.imageUrl;
     
     let contentElement = document.createElement('p');
@@ -125,8 +125,16 @@ let pokemonRepository = (function () {
     let listItem = document.createElement('li');
     let button = document.createElement('button');
 
+    listItem.classList.add('row');
+    listItem.classList.add('justify-content-center');
     button.innerText = `${pokemon.name}`;
     button.classList.add('pokemonTile');
+    button.classList.add('col-12');
+    button.classList.add('col-md-8');
+    button.classList.add('col-lg-6');
+    button.classList.add('mb-1');
+    button.classList.add('p-2');
+    button.classList.add('text-center');
     button.addEventListener('click', function (event) {
       showDetails(pokemon);
       });

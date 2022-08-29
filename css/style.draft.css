@@ -39,53 +39,23 @@ header {
     font-family: Courier, monospace;
 }
 
-.subheader {
+h3 {
     background-color: var(--color-subheader);
     color: var(--color-subheader-text);
+    margin-bottom: 0;
 }
 
 ul.pokemon-list {
-    padding: 0;
     list-style: none;
 }
 
 .pokemonTile {
     background-color: #efefef;
-    width: 300px;
-    margin: 0 0 10px;
-    padding: 12px;
 }
 
 .pokemonTile:active {
     background-color: cyan;
     transform: translateY(4px);
-}
-
-.flex-column {
-    display: flex;
-    flex-flow: column;
-}
-
-.flex-row {
-    display: flex;
-    flex-flow: row;
-}
-
-.center {
-    justify-content: center;
-    text-align: center;
-}
-
-.marg0 {
-    margin: 0;
-}
-
-.pad5 {
-    padding: 5px;
-}
-
-.pad10 {
-    padding: 10px;
 }
 
 #modal-container {
