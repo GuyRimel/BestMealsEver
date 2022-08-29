@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Best Meals Ever</title>
+  <title>Best Pokedex Ever</title>
 
   <!-- fonts and styles -->
   <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;700&display=swap" rel="stylesheet">
@@ -13,20 +13,29 @@
 </head>
 <body>
   <header class="flex-row center pad10">
-    <h1>Best Recipes Ever</h1>
+    <h1>Best Pokedex Ever</h1>
   </header>
-  <main>
+
+  <main class="flex-column center">
     <h2 class="subheader marg0 pad10">
-      Welcome to the demo of "Best Recipes Ever"! 
+      You have <em>got</em> to catch them! All of them!
     </h2>
-    <div class="container">
 
-    </div>
+    <form class="pad10">
+      <input type="text" name="searchBar" id="searchBar">
+      <button>Search</button>
+    </form>
 
-    </div>
+    <div id="modal-container" class="is-hidden"></div>
+
+    <ul class="flex-column pokemon-list">
+      <!-- list items go here -->
+    </ul>
   </main>
   
   <!-- bottom scripts -->
+  <script src="js/promise-polyfill.js"></script>
+  <script src="js/fetch-polyfill.js"></script>
   <script src="js/scripts.js"></script>
 </body>
 </html>
