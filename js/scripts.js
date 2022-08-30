@@ -62,6 +62,12 @@ let pokemonRepository = (function () {
     modal.classList.add('show');
     modal.classList.remove('hide');
     
+    // counting the number of pokemon that have been clicked and setting nav totalizer
+    clickedButton.dataset.isClicked = true;
+    let navTotalizer = document.querySelector('#navTotalizer');
+    let totalPokemon = document.querySelectorAll("[data-is-clicked='true']").length;
+    navTotalizer.innerText = totalPokemon;
+    
     // add modal content
     let closeButtonElement = document.querySelector('button.close');
     closeButtonElement.addEventListener('click', hideModal);
@@ -121,7 +127,7 @@ let pokemonRepository = (function () {
 
     listItem.classList.add('group-list-item', 'row', 'justify-content-center', 'mb-2');
     button.innerText = `${pokemon.name}`;
-    button.classList.add('btn', 'btn-light', 'col-12', 'col-lg-6');
+    button.classList.add('poke', 'btn', 'btn-light', 'col-12', 'col-lg-6');
     button.addEventListener('click', function (e) {
       showDetails(pokemon, e);
       });
@@ -129,6 +135,7 @@ let pokemonRepository = (function () {
     listItem.appendChild(button);
     button.setAttribute('data-target', '.modal');
     button.setAttribute('data-toggle', 'modal');
+    button.setAttribute('data-is-clicked', 'false');
     document.querySelector('.pokemon-list').appendChild(listItem);
   }
     
