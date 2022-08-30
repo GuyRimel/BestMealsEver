@@ -33,10 +33,14 @@ body {
     background-color: #ddd;
 }
 
-header {
+nav {
     background-color: var(--color-header);
     color: var(--color-header-text);
     font-family: Courier, monospace;
+}
+
+.navbar-brand {
+    font-family: "Silkscreen";
 }
 
 h3 {
