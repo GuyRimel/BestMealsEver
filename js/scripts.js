@@ -2,10 +2,9 @@
 let pokemonRepository = (function () {
   // the first object ( pokemonList[0] ) is used as validation for the 'addv()' method
   let pokemonList = [];
-  let limit = 150;
-  let apiUrl = 'https://pokeapi.co/api/v2/pokemon/?limit=' + limit;
-
-  function loadList() {
+  
+  function loadList(limit) {
+    let apiUrl = 'https://pokeapi.co/api/v2/pokemon/?limit=150';
     showLoadingMessage();
 
     return fetch(apiUrl).then(function (response) {
@@ -180,7 +179,7 @@ let pokemonRepository = (function () {
     
     return phrase;
   }
-
+  
   // ! -- only the things in this returned object are accessible outside the scope of this function
   return {
     add: add,
