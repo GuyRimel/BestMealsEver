@@ -92,9 +92,10 @@ let pokemonRepository = (function () {
     let phraseHeightString = phraseHeight(pokemon.height);
     let firstType = pokemon.types[0].type.name;
     modalBody.innerHTML = `
+      <p><b>Type: </b> ${capitalizeFirstLetter(firstType)}</p>
       <b>Height: </b>${pokemon.height}
       <p><em>${phraseHeightString}</em></p>
-      <b>Type: </b> ${capitalizeFirstLetter(firstType)}`;
+    `;
 
     let modalContent = document.querySelector(".modal-content");
     modalContent.classList.add(firstType);
@@ -188,13 +189,13 @@ let pokemonRepository = (function () {
     let phrase;
 
     if (height >= 12) {
-      phrase = "This thing's HUGE! O_O";
+      phrase = "This thing's HUGE! 😲";
     } else if (height < 12 && height >= 8) {
-      phrase = "That ain't small o_o";
+      phrase = "That ain't small 😮";
     } else if (height < 8 && height >= 4) {
-      phrase = "Kind of a shorty -_-";
+      phrase = "Kind of a shorty 😐";
     } else {
-      phrase = "What a tiny little Pokemon! ^o^";
+      phrase = "What a tiny little Pokemon! 😍";
     }
 
     return phrase;

@@ -2,7 +2,7 @@
 <!-- This excellent README document was modified from the following source:
 https://github.com/othneildrew/Best-README-Template/blob/master/README.md -->
 
-<a name="readme-top"></a>
+<a id="readme-top"></a>
 
 <br />
 <div align="center">
@@ -13,7 +13,7 @@ https://github.com/othneildrew/Best-README-Template/blob/master/README.md -->
   <h3 align="center">PokeDexterity</h3>
 
   <p align="center">
-    Pokedexterity is a 100% unique and user engaging Pokedex app — now with less sarcasm! The app fetches data from a <a href="https://pokeapi.co/" target="_blank">Pokemon API</a> with and displays each Pokemon in a simple "list of buttons" format.
+    Pokedexterity is a 100% unique and user engaging Pokedex app — now with less sarcasm! The app fetches data from a <a href="https://pokeapi.co/" target="_blank">Pokemon API</a> with vanilla ES6 JavaScript and displays each Pokemon in a simple "list of buttons" format.
   </p>
 </div>
 <br />
@@ -25,6 +25,7 @@ https://github.com/othneildrew/Best-README-Template/blob/master/README.md -->
     <li>
       <a href="#about-the-project">About The Project</a>
       <ul>
+        <li><a href="#key-features">Key Features</a></li>
         <li><a href="#built-with">Built With</a></li>
       </ul>
     </li>
@@ -44,7 +45,7 @@ https://github.com/othneildrew/Best-README-Template/blob/master/README.md -->
 
 ## About The Project
 
-[![Pokedexterity Screenshot]](img/screenshots/screenshot01.png)
+[Pokedexterity Screenshot](img/screenshots/screenshot01.png)
 
 ### Key Features
 
@@ -66,11 +67,11 @@ https://github.com/othneildrew/Best-README-Template/blob/master/README.md -->
 
 ## Getting Started
 
-To get a local copy up and running follow these simple example steps.
+Since the <a href="https://pokeapi.co/" target="_blank">Pokemon API</a> used for this app is free to use and requires no authentication, 
 
 <!-- PROJECT DEPLOYMENT SITE -->
 
-## Project Deployment Site
+## Project Deployment
 
 Project Deployment: [https://guyrimel.github.io/Pokedexterity/](https://guyrimel.github.io/Pokedexterity/)
 
