@@ -9,7 +9,7 @@
   <h3 align="center">PokeDexterity</h3>
 
   <p align="center">
-    Pokedexterity is a 100% unique and user engaging Pokedex app — now with less sarcasm! The app fetches data from a <a href="https://pokeapi.co/" target="_blank">Pokemon API</a> with vanilla ES6 JavaScript and displays each Pokemon in a simple "list of buttons" format.
+    Pokedexterity is a 100% unique and user engaging Pokedex app — now with less sarcasm! The app fetches data from a well-maintained <a href="https://pokeapi.co/" target="_blank">Pokemon API</a> with vanilla ES6 JavaScript and displays each Pokemon in a simple "list of buttons" format.
   </p>
 </div>
 <br />
@@ -30,7 +30,7 @@
       <ul>
         <li><a href="#prerequisites">Prerequisites</a></li>
         <li><a href="#installation">Installation</a></li>
-        <li><a href="#quick-start">Quick-Start</a></li>
+        <li><a href="#quick-start">UX-Notes</a></li>
       </ul>
     </li>
     <li><a href="#license">License</a></li>
@@ -67,19 +67,39 @@
 <!-- GETTING STARTED -->
 ## Getting Started
 
-Since the <a href="https://pokeapi.co/" target="_blank">Pokemon API</a> used for this app is free to use and requires no authentication, 
-
-<!-- PROJECT DEPLOYMENT -->
-## Project Deployment
-
-Project Deployment: [https://guyrimel.github.io/Pokedexterity/](https://guyrimel.github.io/Pokedexterity/)
+<!-- PREREQUISITES -->
+### Prerequisites
+- git installed on your local machine
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
-<!-- PROJECT REPO -->
-## Project Repository
+<!-- INSTALLATION -->
+### Installation
+
+1. Clone the repo
+   ```sh
+   git clone https://github.com/GuyRimel/Pokedexterity.git
+   ```
+2. Open the `index.html` file in your browser of choice.
+
+- Note: The <a href="https://pokeapi.co/" target="_blank">Pokemon API</a> used for this app is free to use and requires no authentication or account creation.
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+
+<!-- PROJECT DEPLOYMENT -->
+## Project Links
+
+Project Deployment: [https://guyrimel.github.io/Pokedexterity/](https://guyrimel.github.io/Pokedexterity/)
 
 Project Repository: [https://github.com/GuyRimel/Pokedexterity](https://github.com/GuyRimel/Pokedexterity)
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+
+<!-- SCREENSHOTS -->
+## Screenshots
+
+![sreenshot](img/screenshots/screenshot00.png)
+![sreenshot](img/screenshots/screenshot01.png)
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
