@@ -49,9 +49,10 @@
 <!-- KEY FEATURES -->
 ### Key Features
 
-1. Clicking a Pokemon button now applies a border with a type-based color. "fire" type Pokemon would get an orange border, etc...
-2. The navbar displays a totalizer keeping track of how many pokemon you've "caught" (clicked) so far.
-3. Fetch and promise pollyfills have been added for older browser and IE support.
+1. Featuring sprites and data of 150 Pokemon.
+2. Keep track of how many Pokemon you've caught so far!
+3. Created with HTML, CSS, and simple ES6 Vanilla Javascript. Runs right in the browser!
+4. Fetch and promise pollyfills have been added for older browser and IE support.
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -86,6 +87,15 @@
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
+<!-- UX NOTES -->
+## UX-Notes
+
+- The navbar displays a totalizer keeping track of how many pokemon you've "caught" (clicked) so far.
+- Click on a Pokemon button from the list to see its sprite and information.
+- Clicking a Pokemon button now applies a border with a type-based color e.g., a "fire" type Pokemon would get an orange border.
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+
 <!-- PROJECT DEPLOYMENT -->
 ## Project Links
 
@@ -99,6 +109,7 @@ Project Repository: [https://github.com/GuyRimel/Pokedexterity](https://github.c
 ## Screenshots
 
 ![sreenshot](img/screenshots/screenshot00.png)
+
 ![sreenshot](img/screenshots/screenshot01.png)
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
