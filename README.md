@@ -30,7 +30,7 @@
       <ul>
         <li><a href="#prerequisites">Prerequisites</a></li>
         <li><a href="#installation">Installation</a></li>
-        <li><a href="#quick-start">UX-Notes</a></li>
+        <li><a href="#ux-notes">UX Notes</a></li>
       </ul>
     </li>
     <li><a href="#license">License</a></li>
