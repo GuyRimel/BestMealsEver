@@ -1,14 +1,14 @@
 <a id="readme-top"></a>
 <br />
 
-<div align="center">
+<div align="left">
   <a href="https://guyrimel.github.io/Portfolio-Site/index.html">
     <img src="img/RLogoNoName.ico" alt="Logo" width="80" height="80">
   </a>
 
   <h3 align="center">PokeDexterity</h3>
 
-  <p align="left">
+  <p align="center">
     Pokedexterity is a 100% unique and user engaging Pokedex app — now with less sarcasm! The app fetches data from a well-maintained <a href="https://pokeapi.co/" target="_blank">Pokemon API</a> with vanilla ES6 JavaScript and displays each Pokemon in a simple "list of buttons" format.
   </p>
 </div>
