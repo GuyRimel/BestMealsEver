@@ -1,7 +1,7 @@
 <a id="readme-top"></a>
 <br />
 
-<div align="right">
+<div align="center">
   <a href="https://guyrimel.github.io/Portfolio-Site/index.html">
     <img src="img/RLogoNoName.ico" alt="Logo" width="80" height="80">
   </a>
