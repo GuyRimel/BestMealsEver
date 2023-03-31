@@ -8,7 +8,7 @@
 
   <h3 align="center">PokeDexterity</h3>
 
-  <p align="center">
+  <p align="left">
     Pokedexterity is a 100% unique and user engaging Pokedex app — now with less sarcasm! The app fetches data from a well-maintained <a href="https://pokeapi.co/" target="_blank">Pokemon API</a> with vanilla ES6 JavaScript and displays each Pokemon in a simple "list of buttons" format.
   </p>
 </div>
