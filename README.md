@@ -117,6 +117,6 @@ Project Repository: [https://github.com/GuyRimel/Pokedexterity](https://github.c
 <!-- LICENSE -->
 ## License
 
-Distributed under the MIT License. See `LICENSE.txt` for more information.
+Distributed under the MIT License. See <a href="LICENSE.txt">`LICENSE.txt`</a> for more information.
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
