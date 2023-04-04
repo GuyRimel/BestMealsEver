@@ -51,7 +51,7 @@
 
 1. Featuring sprites and data of 150 Pokemon.
 2. Keep track of how many Pokemon you've caught so far!
-3. Created with HTML, CSS, Javascript, and Node.js. Able to run right in the browser!
+3. Created with HTML, CSS, and simple ES6 Vanilla Javascript. Runs right in the browser!
 4. Fetch and promise pollyfills have been added for older browser and IE support.
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
@@ -60,7 +60,6 @@
 ### Built With
 
 - HTML, CSS, JavaScript
-- Node.js
 - Bootstrap
 - JQuery
 
